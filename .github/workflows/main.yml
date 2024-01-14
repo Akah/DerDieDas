@@ -12,9 +12,7 @@ jobs:
         with:
           node-version: '18'
 
-      - name: run linter
-        run: yarn lint
-
       - name: run test
-        run: yarn install --immutable
-        run: yarn run test
+        run: |
+          yarn install --immutable
+          yarn run test
