@@ -4,6 +4,8 @@ import { Text,View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import AppNavigator from './AppNavigator';
+
 function HomeScreen() {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -17,9 +19,7 @@ const Stack = createNativeStackNavigator();
 function App(): React.JSX.Element {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen} />
-            </Stack.Navigator>
+            <AppNavigator/>
         </NavigationContainer>
     );
 }
