@@ -1,19 +1,34 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Icon } from 'react-native-paper';
 
-import HomeScreen from './screens/HomeScreen';
-import DetailsScreen from './screens/DetailsScreen';
+import { SearchScreen } from './screens/SearchScreen';
+import { HomeScreen } from './screens/HomeScreen';
+import { MoreScreen } from './screens/MoreScreen';
 
-const { Screen, Navigator } = createStackNavigator();
+const { Screen, Navigator } = createBottomTabNavigator();
 
-export default function Navigation() {
-    const options = {};
-
+const Navigation: React.FC = () => {
     return (
-        <Navigator>
-            <Screen name="Home" component={HomeScreen} />
-            <Screen options={options} name="Details" component={DetailsScreen} />
-        </Navigator>
+	<Navigator>
+	    <Screen
+		name="Search"
+		component={SearchScreen}
+		options={{ tabBarIcon: ({ color, size }) => <Icon source={"magnify"} size={size} color={color} /> }}
+	    />
+	    <Screen
+		name="Home"
+		component={HomeScreen}
+		options={{ tabBarIcon: ({ color, size }) => <Icon source={"home"} size={size} color={color} /> }}
+	    />
+	    <Screen
+		name="More"
+		component={MoreScreen}
+		options={{ tabBarIcon: ({ color, size }) => <Icon source={"menu"} size={size} color={color} /> }}
+	    />
+	</Navigator>
     );
 }
+
+export default Navigation;

@@ -1,25 +1,22 @@
 import React from 'react';
-import { Text,View } from 'react-native';
-
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import AppNavigator from './AppNavigator';
+import { DBProvider } from './DBProvider';
+import { PaperProvider } from 'react-native-paper';
+import { Settings } from 'react-native-paper/lib/typescript/core/settings';
 
-function HomeScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home Screen</Text>
-        </View>
-    );
-}
-
-const Stack = createNativeStackNavigator();
+const paperSettings: Settings = {
+    rippleEffectEnabled: false,
+};
 
 function App(): React.JSX.Element {
     return (
         <NavigationContainer>
-            <AppNavigator/>
+            <PaperProvider settings={paperSettings}>
+                <DBProvider>
+                    <AppNavigator />
+                </DBProvider>
+            </PaperProvider>
         </NavigationContainer>
     );
 }

@@ -1,0 +1,3 @@
+select * from nouns 
+where noun like "%-ung%" 
+order by case when frequency is null then 0 else 1 end desc, frequency asc;
