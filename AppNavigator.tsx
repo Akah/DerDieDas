@@ -11,24 +11,24 @@ const { Screen, Navigator } = createBottomTabNavigator();
 
 const Navigation: React.FC = () => {
     return (
-	<Navigator>
+        <Navigator>
 	    <Screen
-		name="Search"
-		component={SearchScreen}
-		options={{ tabBarIcon: ({ color, size }) => <Icon source={"magnify"} size={size} color={color} /> }}
+                name="Search"
+                component={SearchScreen}
+                options={{ tabBarIcon: ({ color, size }) => <Icon source={'magnify'} size={size} color={color} /> }}
 	    />
 	    <Screen
-		name="Home"
-		component={HomeScreen}
-		options={{ tabBarIcon: ({ color, size }) => <Icon source={"home"} size={size} color={color} /> }}
+                name="Home"
+                component={HomeScreen}
+                options={{ tabBarIcon: ({ color, size }) => <Icon source={'home'} size={size} color={color} /> }}
 	    />
 	    <Screen
-		name="More"
-		component={MoreScreen}
-		options={{ tabBarIcon: ({ color, size }) => <Icon source={"menu"} size={size} color={color} /> }}
+                name="More"
+                component={MoreScreen}
+                options={{ tabBarIcon: ({ color, size }) => <Icon source={'menu'} size={size} color={color} /> }}
 	    />
-	</Navigator>
+        </Navigator>
     );
-}
+};
 
 export default Navigation;

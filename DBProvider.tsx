@@ -13,7 +13,7 @@ export const DBProvider: React.FC<React.PropsWithChildren> = (props) => {
             {props.children}
         </DBContext.Provider>
     );
-}
+};
 
 export function useDBContext(): DBContext {
     const context: DBContext = React.useContext(DBContext);

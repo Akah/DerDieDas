@@ -6,9 +6,9 @@ import { useDBContext } from '../DBProvider';
 
 export function getGender(noun: Noun): Gender | null {
     if (noun.gender != null) {
-	return noun.gender;
+        return noun.gender;
     } else if (noun.gender2 != null) {
-	return noun.gender2;
+        return noun.gender2;
     }
     return noun.gender3;
 }
@@ -23,7 +23,7 @@ export function genderToString(gender: Gender | null): string {
             return 'masculine';
         default:
             return 'not specified';
-    };
+    }
 }
 
 export function getArticle(gender: Gender | null): string {
@@ -36,7 +36,7 @@ export function getArticle(gender: Gender | null): string {
             return 'der';
         default:
             return 'n/a';
-    };
+    }
 }
 
 export function frequencyToString(frequency: number | null): string {
@@ -56,7 +56,7 @@ const Entry: React.FC<EntryProps> = (props: EntryProps) => {
     const padding = 2;
     const radius = 16;
     const top = props.index === 0;
-    const bottom = props.index === props.length -1;
+    const bottom = props.index === props.length - 1;
     const openWeb = (): void =>{
         Linking.openURL(`https://en.wiktionary.org/wiki/${props.word.noun}`);
     };
@@ -88,7 +88,7 @@ const Entry: React.FC<EntryProps> = (props: EntryProps) => {
             </View>
         </View >
     );
-}
+};
 
 export const SearchScreen: React.FC = () => {
     const [ search, setSearch ] = React.useState<string>('');

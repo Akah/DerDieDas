@@ -47,7 +47,7 @@ const useButtonStyles = (position: Position | undefined, color: ColorValue, bord
         border: {
             borderWidth: 4,
             borderColor: borderColor,
-            borderBottomWidth: 8, 
+            borderBottomWidth: 8,
             borderTopLeftRadius: position === 'left' || position === 'top' ? borderRadius : 0,
             borderTopRightRadius: position === 'right' || position === 'top' ? borderRadius : 0,
             borderBottomLeftRadius: position === 'left' || position === 'bottom' ? borderRadius : 0,
@@ -83,9 +83,9 @@ export const MyButton: React.FC<ButtonProps> = (props: ButtonProps) => {
 
     const onPressIn = () => setPressed(true);
     const onPressOut = () => setPressed(false);
-    
+
     return (
-        <View style={[props.style, pressed? { marginTop: 4 } : undefined]}>
+        <View style={[props.style, pressed ? { marginTop: 4 } : undefined]}>
             <Button
                 style={[
                     styles.button,
@@ -130,7 +130,7 @@ const useProgressStyles = (percent: number) => {
             marginTop: 4,
         },
     });
-}
+};
 
 interface ProgressProps {
     percent: number;
@@ -155,7 +155,7 @@ const useSurfaceStyles = () => {
             borderRadius: 16,
             borderColor: 'lightgrey',
             borderWidth: 4,
-        }
+        },
     });
 };
 
@@ -192,14 +192,14 @@ export const QuizSurface: React.FC<QuizSurfaceProps> = (props) => {
             <Text style={{alignSelf: 'flex-end'}}>{'frequency: ' + props.noun.frequency}</Text>
         </Surface>
     );
-}
+};
 
 export const HomeScreen: React.FC = () => {
     const styles = useStyles();
     const [ resolved, setResolved ] = React.useState<boolean>(false);
     const [ progress, setProgress ] = React.useState<number>(10);
 
-    const foo = () => { setResolved(!resolved)};
+    const foo = () => { setResolved(!resolved);};
 
     const upProgress = () => {
         if (progress < 100) {
